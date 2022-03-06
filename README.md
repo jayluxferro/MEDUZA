@@ -12,11 +12,11 @@ It's a [Frida](https://frida.re/)-based tool, my replacement for [SSLKillSwitch]
 
 ## How does it work?
 
-It's simple. First time, you run an app without sniffing and use it as usual. MEDUZA is sitting quietly and collecting certificates used by the app to connect servers. Then MEDUZA generates a Frida script that fakes (==upnin) the collected certificates. So you run the app for second time, use the generated script, and catch the traffic with mitmproxy.
+It's simple. First time, you run an app without sniffing and use it as usual. MEDUZA is sitting quietly and collecting certificates used by the app to connect servers. Then MEDUZA generates a Frida script that fakes (==unpin) the collected certificates. So you run the app for second time, use the generated script, and catch the traffic with mitmproxy.
 
 ## Limitations
 
-MEDUZA can only unpin apps using iOS system SSL libs. Some apps (e.g. Instagram) do not use the system SSL libs, they implement some third-party custom SSL stack (for example, Instagram uses OpenSSL statically linked to an Instagram private frameworks, see [InstagramSSLPinningBypass-iOS](https://github.com/kov4l3nko/InstagramSSLPinningBypass-iOS) for details).
+MEDUZA can only unpin apps using iOS system SSL libs. Some apps (e.g. Instagram) do not use the system SSL libs, they implement some third-party custom SSL stack (for example, Instagram uses OpenSSL statically linked to an Instagram private frameworks).
 
 Also, MEDUZA is based on Frida, so it does not work on apps with anti-Frida protection.
 
