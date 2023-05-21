@@ -81,13 +81,13 @@ There are two general steps. You need the first step to catch all certificates p
 3. Choose the app, e.g. Uber. Run MEDUZA as follows
 
     ```
-    $ python3 meduza.py -s <app name of id> <path/to/the/frida/script.js>
+    $ python3 meduza.py -s -b <app name of id> -o <path/to/the/frida/script.js>
     ```
 
     e.g.  for Uber
 
     ```
-    $ python3 meduza.py -s com.ubercab.UberClient ./unpinUber.js
+    $ python3 meduza.py -s -b com.ubercab.UberClient -o ./unpinUber.js
     ```
 
     Here `-s` means that Uber will be (re-)spawned. If you wanna connect to an already running app and do not re-spawn it, use `-a` instead of `-s`.
